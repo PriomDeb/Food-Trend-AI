@@ -18,9 +18,6 @@ st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
 
 
-
-
-
 def load_dataset(path):
     return pd.read_excel(path, usecols=["ratings_int", "restaurant", "city", "preprocessed_text"])
 
