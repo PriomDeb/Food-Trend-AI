@@ -5,6 +5,7 @@ import re
 import string
 import streamlit as st
 import joblib
+import matplotlib.pyplot as plt
 
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
 
