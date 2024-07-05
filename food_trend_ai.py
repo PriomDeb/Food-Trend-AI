@@ -4,6 +4,7 @@ from random import randint
 import re
 import string
 import streamlit as st
+import joblib
 
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
 
@@ -16,7 +17,7 @@ st.write("This app shows the sentiment analysis of restaurant reviews in Banglad
 def load_dataset(path):
     return pd.read_excel(path, usecols=["ratings_int", "restaurant", "city", "preprocessed_text"])
 
-df = load_dataset(DATASET)
+df = joblib.load("Food Review Dataset of Bangladesh.joblib")
 
 print(df.head())
 
@@ -34,11 +35,25 @@ selection = st.sidebar.radio("Choose a functionality", menu_options)
 
 # Display content based on sidebar selection
 if selection == "Top Restaurant Based on City":
+    st.subheader(menu_options[0])
     unique_cities = df['city'].unique()
     selected_city = st.selectbox("Select City", sorted(unique_cities))
     
-    st.subheader(menu_options[0])
-    st.write(unique_cities)
+    # Show selected city
+    st.subheader(f"Selected City: {selected_city}")
+
+    # Menu for selecting number of top restaurants
+    n_top_restaurants = st.selectbox("Top Restaurants by Rating", range(1, 11))
+
+    # Filter restaurants by selected city and top ratings
+    filtered_df = df[df['city'] == selected_city].nlargest(n_top_restaurants, 'ratings_int')
+
+    # Display top restaurants
+    st.subheader(f"Top {n_top_restaurants} Restaurants in {selected_city} by Ratings")
+    if len(filtered_df) == 0:
+        st.write("No restaurants found for selected city and rating range.")
+    else:
+        st.write(filtered_df[['restaurant', 'ratings_int']])
     
 elif selection == "Dataset Overview":
     st.subheader("Dataset Overview")
