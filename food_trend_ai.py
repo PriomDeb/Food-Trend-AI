@@ -72,11 +72,15 @@ if selection == "Top Restaurant Based on City":
         
         # st.table(filtered_df)
         
+        def score(score):
+            return f"{score:.2f}%"
+        
         try:
             st.dataframe(filtered_df.style.background_gradient(cmap='Greens', subset=['Positive Score']).\
                 set_properties(**{'text-align': 'center'}).format({'Positive Score': '{:.2f}%'}), width=600)
         except:
-            st.dataframe(filtered_df)
+            filtered_df["Positive Score"] = filtered_df["Positive Score"].apply(score)
+            st.dataframe(filtered_df, width=600)
     
 elif selection == "Dataset Overview":
     st.subheader("Dataset Overview")
