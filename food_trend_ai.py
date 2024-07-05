@@ -102,9 +102,7 @@ elif selection == "Sample Reviews":
 
 developer = """
 
-
-
-#
+---
 
 ## Author 🌱
 
@@ -121,7 +119,7 @@ diskaouapps@gmail.com
 
 http://priomdeb.com
 
-# 🌵 Stay peace and keep coding!
+## 🌵 Stay peace and keep coding!
 """
     
 st.caption(developer)
