@@ -99,3 +99,29 @@ elif selection == "Ratings Distribution":
 elif selection == "Sample Reviews":
     st.subheader("Sample Reviews")
     st.write(df["preprocessed_text"].sample(5))
+
+developer = """
+
+
+
+#
+
+## Author 🌱
+
+### Devloped by Priom Deb 🌴
+
+## Contact 🌱
+
+[![Mail](https://img.shields.io/badge/Direct_Email-yellow)](mailto:priom@priomdeb.com)
+[![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/PriomDeb)
+
+priom@priomdeb.com
+
+diskaouapps@gmail.com
+
+http://priomdeb.com
+
+# 🌵 Stay peace and keep coding!
+"""
+    
+st.caption(developer)
