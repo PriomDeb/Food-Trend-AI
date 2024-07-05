@@ -9,8 +9,10 @@ import joblib
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
 
 # Streamlit app
+st.set_page_config(page_title="Food Trend.AI",page_icon= "🍔")
 st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
+
 
 
 
@@ -103,6 +105,7 @@ elif selection == "Sample Reviews":
 developer = """
 
 ---
+# 
 
 ## Author 🌱
 
@@ -110,14 +113,10 @@ developer = """
 
 ## Contact 🌱
 
-[![Mail](https://img.shields.io/badge/Direct_Email-yellow)](mailto:priom@priomdeb.com)
+[![Website](https://img.shields.io/badge/priomdeb.com-teal)](https://priomdeb.com)
 [![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/PriomDeb)
-
-priom@priomdeb.com
-
-diskaouapps@gmail.com
-
-http://priomdeb.com
+[![Mail](https://img.shields.io/badge/priom@priomdeb.com-yellow)](mailto:priom@priomdeb.com)
+[![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/PriomDeb)
 
 ## 🌵 Stay peace and keep coding!
 """
