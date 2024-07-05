@@ -5,7 +5,6 @@ import re
 import string
 import streamlit as st
 import joblib
-import matplotlib
 
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
 
@@ -73,9 +72,11 @@ if selection == "Top Restaurant Based on City":
         
         # st.table(filtered_df)
         
-        st.dataframe(filtered_df.style.background_gradient(cmap='Greens', subset=['Positive Score']).\
-                 set_properties(**{'text-align': 'center'}).\
-                 format({'Positive Score': '{:.2f}%'}), width=600)
+        try:
+            st.dataframe(filtered_df.style.background_gradient(cmap='Greens', subset=['Positive Score']).\
+                set_properties(**{'text-align': 'center'}).format({'Positive Score': '{:.2f}%'}), width=600)
+        except:
+            st.dataframe(filtered_df)
     
 elif selection == "Dataset Overview":
     st.subheader("Dataset Overview")
