@@ -11,8 +11,48 @@ developer_mode = True
 
 # Streamlit app
 st.set_page_config(page_title="Food Trend.AI",page_icon= "🍔")
+html_code = """
+<style>
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 26ch; }
+  100% { width: 0; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+.typewriter {
+  text-align: center;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 6s steps(19, end) infinite, blink-caret .75s step-end infinite;
+  width: 19ch; /* Set width to match character count */
+  display: inline-block;
+}
+
+.development{
+    text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    height: 26px;
+}
+</style>
+
+<div class="development">
+<div class="typewriter">
+  🚀 Development View
+</div>
+</div>
+"""
 if developer_mode:
-    st.info(body="Development View", icon="🚀")
+    
+    st.markdown(html_code, unsafe_allow_html=True)
     
 st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
@@ -109,10 +149,6 @@ developer = """
 ---
 # 
 
-## Author 🌱
-
-### Devloped by Priom Deb 🌴
-
 ## Contact 🌱
 
 [![Website](https://img.shields.io/badge/priomdeb.com-teal)](https://priomdeb.com)
@@ -123,6 +159,44 @@ developer = """
 """
 
 st.caption(developer)
+
+footer = """
+<style>
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 26ch; }
+  100% { width: 0; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+.typewriter {
+  text-align: center;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 4s steps(19, end) infinite, blink-caret .75s step-end infinite;
+  width: 19ch; /* Set width to match character count */
+  display: inline-block;
+}
+
+.copyright{
+    text-align: center;
+}
+</style>
+
+<div class="copyright">
+<div class="">
+  Made with ❤️ by Priom Deb
+</div>
+</div>
+"""
+
+st.markdown(footer, unsafe_allow_html=True)
 
 
 
