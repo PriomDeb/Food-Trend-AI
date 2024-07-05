@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+Food Review Dataset of Bangladesh.xlsx
 
 # C extensions
 *.so
