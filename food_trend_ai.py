@@ -7,11 +7,16 @@ import streamlit as st
 import joblib
 
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
+developer_mode = True
 
 # Streamlit app
 st.set_page_config(page_title="Food Trend.AI",page_icon= "🍔")
+if developer_mode:
+    st.info(body="Development View", icon="🚀")
+    
 st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
+
 
 
 
@@ -122,3 +127,6 @@ developer = """
 """
     
 st.caption(developer)
+
+
+
