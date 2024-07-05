@@ -123,9 +123,8 @@ developer = """
 [![Mail](https://img.shields.io/badge/priom@priomdeb.com-yellow)](mailto:priom@priomdeb.com)
 [![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/PriomDeb)
 
-## 🌵 Stay peace and keep coding!
 """
-    
+
 st.caption(developer)
 
 
