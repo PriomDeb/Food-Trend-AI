@@ -175,3 +175,11 @@ def get_restaurant_sentiments(module_name, df):
     """
   
   st.markdown(html_3d_text, unsafe_allow_html=True)
+  
+  st.info("""⚠️
+          **Food Trend.AI** is a platform developed solely to showcase our thesis. 
+          We do not support or condone any actions to promote or demote any restaurants through this platform. Our statistics are based on real data scraped from online 
+          food ordering portals. _**The top restaurant rankings presented are derived purely from actual customer ratings and reviews.**_
+          \nOur intention is _**not to promote or damage the reputation**_ of any **_restaurants_** or online 
+          **_food ordering websites_**. For any clarifications or objections, please contact.
+          """)
