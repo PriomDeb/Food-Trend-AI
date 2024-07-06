@@ -32,8 +32,16 @@ def sidebar():
                         - Faisal Ahmed
                         - Dewan Ziaul Karim
                         """)
+        authors.info("""
+                     *Affiliation:*
+                     
+                     Dept. Computer Science and Engineering 
+                     
+                     BRAC University, Dhaka, Bangladesh
+                     """)
     
     st.sidebar.warning("""
+                       :warning:
                        **Disclaimer:**
                        The dataset used in our platform, **Food Trend.AI**, consists of customer food reviews collected from online 
                        food ordering portals in Bangladesh. These reviews were publicly accessible and viewable by both 
