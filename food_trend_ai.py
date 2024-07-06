@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from wordcloud import WordCloud
 
-
 DATASET = "Food Review Dataset of Bangladesh.xlsx"
 developer_mode = True
 
@@ -58,7 +57,7 @@ if developer_mode:
     
     st.markdown(html_code, unsafe_allow_html=True)
     
-st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
+st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
 
 
