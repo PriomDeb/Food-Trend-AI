@@ -64,8 +64,23 @@ def load_dataset(path):
 df = joblib.load("Food Review Dataset of Bangladesh.joblib")
 
 
-def calculate_positive_percentage(ratings):
+def calculate_positive_score(ratings):
     positive_ratings = ratings[ratings >= 3]
+    score = (len(positive_ratings) / len(ratings)) * 100 if len(ratings) > 0 else 0
+    return score
+
+def calculate_negative_percentage(ratings):
+    positive_ratings = ratings[ratings < 3]
+    score = (len(positive_ratings) / len(ratings)) * 100 if len(ratings) > 0 else 0
+    return score
+
+def calculate_neutral_percentage(ratings):
+    positive_ratings = ratings[ratings == 3]
+    score = (len(positive_ratings) / len(ratings)) * 100 if len(ratings) > 0 else 0
+    return score
+
+def calculate_positive_percentage(ratings):
+    positive_ratings = ratings[ratings >= 4]
     score = (len(positive_ratings) / len(ratings)) * 100 if len(ratings) > 0 else 0
     return score
 
@@ -74,6 +89,7 @@ def calculate_positive_percentage(ratings):
 st.sidebar.title("Menu")
 menu_options = [
     "Top Restaurant Based on City",
+    "Search Restaurants",
     "Dataset Overview", 
     "Statistics", 
     "Ratings Distribution", 
@@ -96,7 +112,7 @@ if selection == "Top Restaurant Based on City":
     # Filter Top Number of Restaurants
     # Filter and sort restaurants by selected city and highest positive ratings percentage
     filtered_df = df[df['city'] == selected_city].\
-                  groupby('restaurant')['ratings_int'].apply(calculate_positive_percentage).reset_index()
+                  groupby('restaurant')['ratings_int'].apply(calculate_positive_score).reset_index()
     
     
     filtered_df.columns = ['Restaurants', 'Positive Score']
@@ -125,6 +141,32 @@ if selection == "Top Restaurant Based on City":
         except:
             filtered_df["Positive Score"] = filtered_df["Positive Score"].apply(score)
             st.dataframe(filtered_df, width=600)
+
+elif selection == "Search Restaurants":
+  st.subheader("Search Restaurants")
+  
+  unique_restaurants = df['restaurant'].unique()
+  selected_restaurant = st.selectbox("Select Restaurant", sorted(unique_restaurants))
+  
+  filtered_df = df[df['restaurant'] == selected_restaurant].groupby('restaurant')['ratings_int'].apply(calculate_positive_percentage).reset_index()
+  filtered_df.columns = ['Restaurant', 'Positive Sentiment']
+  
+  negative_scores = df[df['restaurant'] == selected_restaurant].groupby('restaurant')['ratings_int'].apply(calculate_negative_percentage).reset_index()
+  negative_scores.columns = ['Restaurant', 'Negative Sentiment']
+  filtered_df = filtered_df.merge(negative_scores, on='Restaurant', how='left')
+  
+  neutral_scores = df[df['restaurant'] == selected_restaurant].groupby('restaurant')['ratings_int'].apply(calculate_neutral_percentage).reset_index()
+  neutral_scores.columns = ['Restaurant', 'Neutral Sentiment']
+  filtered_df = filtered_df.merge(neutral_scores, on='Restaurant', how='left')
+  
+  if len(filtered_df) == 0:
+    st.write("No restaurants found for selected city.")
+    
+  else:
+    filtered_df = filtered_df.reset_index(drop=True)
+    filtered_df.index += 1
+    
+    st.dataframe(filtered_df, width=600)
     
 elif selection == "Dataset Overview":
     st.subheader("Dataset Overview")
