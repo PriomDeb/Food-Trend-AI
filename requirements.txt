@@ -2,5 +2,5 @@ joblib==1.3.2
 matplotlib==3.8.2
 wordcloud==1.9.3
 pandas
-streamlit as st
+streamlit
 joblib
