@@ -4,3 +4,4 @@ wordcloud==1.9.3
 pandas
 streamlit
 joblib
+folium
