@@ -57,7 +57,7 @@ if developer_mode:
     
     st.markdown(html_code, unsafe_allow_html=True)
     
-st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔 🍔")
+st.title("🌭 Restaurant Sentiment Analysis in Bangladesh 🍔")
 st.write("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
 
 
