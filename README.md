@@ -2,6 +2,6 @@
 
 ## Live App
 
-Live on Render (Recommended View): https://foodai.priomdeb.com/
+:rocket: Live on Streamlit Community Cloud (Recommended for Faster Load): https://food-trend.streamlit.app/
 
-Live on Streamlit Community Cloud (Some Errors with Libraries, Not Recommended View for Visuals): https://food-trend.streamlit.app/
+Live on Render (Recommended View): https://foodai.priomdeb.com/
