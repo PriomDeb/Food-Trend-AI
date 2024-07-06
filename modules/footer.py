@@ -44,11 +44,29 @@ def footer():
     .copyright{
         text-align: center;
     }
+    
+    
+    
+    a.custom-link {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+    
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    }
+    
+    a.custom-link:hover {
+    color: red;
+    transform: scale(1.1); 
+    }
+    
     </style>
     
     <div class="copyright">
     <div class="">
-    Made with ❤️ by Priom Deb
+    <strong>Food Trend.AI</strong> Made with ❤️ by <a href="https://priomdeb.com/" class="custom-link">Priom Deb</a>
     </div>
     </div>
     """
