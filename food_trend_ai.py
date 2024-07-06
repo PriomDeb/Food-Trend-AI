@@ -9,6 +9,7 @@ from modules.dataset_insights import dataset_insights
 from modules.about_dataset import about_dataset
 from modules.footer import footer
 from modules.developer_mode_banner import developer_mood_banner
+from modules.sidebar import sidebar
 
 from tools.load_dataset import load_from_serialized
 
@@ -24,6 +25,7 @@ developer_mood_banner(developer_mode)
 
 st.title("🍔 Food Trend.AI")
 st.text("This app shows the sentiment analysis of restaurant reviews in Bangladesh. 🌭")
+st.snow()
 
 
 df = load_from_serialized(DATASET_JOBLIB)
@@ -60,6 +62,14 @@ elif selection == "Dataset Insights":
 
 elif selection == "About Dataset":
   about_dataset(menu_options[3], df)
+
+
+
+
+
+sidebar()
+
+
 
 
 
