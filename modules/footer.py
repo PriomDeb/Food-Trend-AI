@@ -59,7 +59,6 @@ def footer():
     
     a.custom-link:hover {
     color: red;
-    transform: scale(1.1); 
     }
     
     </style>
