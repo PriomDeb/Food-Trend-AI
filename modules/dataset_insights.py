@@ -107,30 +107,39 @@ def wordcloud():
 def dataset_insights(module_name, df):
     st.subheader(module_name)
     
-    number_of_reviews_per_city()
+    with st.spinner('Wait for it...'):
+        number_of_reviews_per_city()
     white_spaces()
     
-    number_of_reviews_per_restaurant()
+    with st.spinner('Wait for it...'):
+        number_of_reviews_per_restaurant()
     white_spaces()
     
-    distribution_of_ratings()
+    with st.spinner('Wait for it...'):
+        distribution_of_ratings()
     white_spaces()
     
-    bar_chart_of_average_ratings_per_city()
+    with st.spinner('Wait for it...'):
+        bar_chart_of_average_ratings_per_city()
     white_spaces()
     
-    bar_chart_of_top_restaurants_by_number_of_reviews()
+    with st.spinner('Wait for it...'):
+        bar_chart_of_top_restaurants_by_number_of_reviews()
     white_spaces()
     
-    histogram_of_ratings_distribution()
+    with st.spinner('Wait for it...'):
+        histogram_of_ratings_distribution()
     white_spaces()
     
-    pairplot_of_restaurants()
+    with st.spinner('Wait for it...'):
+        pairplot_of_restaurants()
     white_spaces()
     
-    pairplot_of_cities()
+    with st.spinner('Wait for it...'):
+        pairplot_of_cities()
     white_spaces()
     
-    wordcloud()
+    with st.spinner('Wait for it...'):
+        wordcloud()
     
 

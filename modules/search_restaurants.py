@@ -124,10 +124,10 @@ def get_restaurant_sentiments(module_name, df):
   negative_text = ' '.join(selected_restaurant_df[selected_restaurant_df['ratings_int'] <= negative_threshold]['preprocessed_text'])
   neutral_text = ' '.join(selected_restaurant_df[(selected_restaurant_df['ratings_int'] > negative_threshold) & (selected_restaurant_df['ratings_int'] < positive_threshold)]['preprocessed_text'])
   
-  
-  positive_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Greens').generate(positive_text)
-  negative_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Reds').generate(negative_text)
-  neutral_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Oranges').generate(neutral_text)
+  with st.spinner('Wait for it...'):
+      positive_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Greens').generate(positive_text)
+      negative_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Reds').generate(negative_text)
+      neutral_wc = WordCloud(width=1600, height=800, background_color='white', colormap='Oranges').generate(neutral_text)
   
   fig3, axs = plt.subplots(1, 3, figsize=(14, 6))
   
