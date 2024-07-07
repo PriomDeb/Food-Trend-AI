@@ -35,7 +35,7 @@ def sidebar():
         authors.info("""
                      *Affiliation:*
                      
-                     Dept. Computer Science and Engineering 
+                     Dept. of Computer Science and Engineering 
                      
                      BRAC University, Dhaka, Bangladesh
                      """)
